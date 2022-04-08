@@ -15,6 +15,9 @@ setItems((oldItems) => {
 })
 setInputList("")
 }
+const deleteItems = () =>{
+
+}
 
   return (
     <>
@@ -29,8 +32,9 @@ setInputList("")
         <ol>
           {/* <li>{inputList}</li> */}
 
-          {items.map((itemval) => {
-           return <Lists text={itemval} />
+          {items.map((itemval,index) => {
+           return <Lists  key = {index} id = {index} text={itemval}
+           onSelect={deleteItems} />
           })}
         </ol>
       </div>
