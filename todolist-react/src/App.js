@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Lists from './Components/Lists'
 
 const App = () => {
 
@@ -29,7 +30,7 @@ setInputList("")
           {/* <li>{inputList}</li> */}
 
           {items.map((itemval) => {
-          return <li>{itemval}</li>
+           return <Lists text={itemval} />
           })}
         </ol>
       </div>
