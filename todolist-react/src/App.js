@@ -15,8 +15,12 @@ setItems((oldItems) => {
 })
 setInputList("")
 }
-const deleteItems = () =>{
-
+const deleteItems = (id) =>{
+ setItems((oldItems) => {
+  return oldItems.filter((arrElement, index) => {
+    return index !== id
+  })
+ })
 }
 
   return (
