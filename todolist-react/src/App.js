@@ -3,13 +3,15 @@ import React, { useState } from 'react'
 const App = () => {
 
 const [inputList, setInputList] = useState("")
-
+const [items,setItems] = useState([])
 
 const itemEvent = (e) => {
 setInputList(e.target.value)
 }
 const listOfItems = () => {
-  
+setItems((oldItems) => {
+  return [...oldItems,inputList]
+})
 }
 
   return (
@@ -23,7 +25,11 @@ const listOfItems = () => {
         <button onClick={listOfItems}> + </button>
 
         <ol>
-          <li>{inputList}</li>
+          {/* <li>{inputList}</li> */}
+
+          {items.map((itemval) => {
+          return <li>{itemval}</li>
+          })}
         </ol>
       </div>
     </div>
